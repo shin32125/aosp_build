@@ -163,7 +163,6 @@ GAPPS_PRODUCT_PACKAGES += \
     AndroidAuto \
     GoogleCamera \
     GoogleContacts \
-    LatinImeGoogle \
     StorageManagerGoogle \
     TagGoogle \
     GoogleVrCore
