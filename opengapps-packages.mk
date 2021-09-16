@@ -25,8 +25,7 @@ GAPPS_PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     GoogleLoginService \
     SetupWizard \
-    Phonesky \
-    GoogleCalendarSyncAdapter
+    Phonesky
 
 TVGAPPS_PRODUCT_PACKAGES += \
     ConfigUpdater \
@@ -89,7 +88,6 @@ endif
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
 TVGAPPS_PRODUCT_PACKAGES += \
-    GoogleCalendarSyncAdapter \
     GooglePartnerSetup \
     GoogleOneTimeInitializer
 else
