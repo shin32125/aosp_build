@@ -114,7 +114,6 @@ endif
 
 ifneq ($(filter micro,$(TARGET_GAPPS_VARIANT)),) # require at least micro
 GAPPS_PRODUCT_PACKAGES += \
-    CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
     PrebuiltGmail
 
