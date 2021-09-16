@@ -36,7 +36,7 @@ and add the following towards the end:
 <remote name="opengapps" fetch="https://github.com/opengapps/"  />
 <remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/"  />
 
-<project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+<project path="vendor/opengapps/build" name="shin32125/aosp_build" revision="master" remote="opengapps" />
 
 <project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
 
