@@ -182,14 +182,10 @@ GAPPS_PRODUCT_PACKAGES += \
     CarrierServices \
     GoogleEarth \
     GCS \
-    GoogleHindiIME \
     GoogleJapaneseInput \
-    KoreanIME \
-    GooglePinyinIME \
     Tycho \
     Street \
-    TranslatePrebuilt \
-    GoogleZhuyinIME
+    TranslatePrebuilt
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
