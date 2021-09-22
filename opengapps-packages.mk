@@ -138,7 +138,7 @@ GAPPS_PRODUCT_PACKAGES += \
 
 ifneq ($(filter full,$(TARGET_GAPPS_VARIANT)),) # require at least full
 
-
+GAPPS_FORCE_BROWSER_OVERRIDES := true
 GAPPS_PRODUCT_PACKAGES += \
     Books \
     EditorsDocs \
@@ -156,7 +156,7 @@ GAPPS_PRODUCT_PACKAGES += \
 ifneq ($(filter stock,$(TARGET_GAPPS_VARIANT)),) # require at least stock
 
 GAPPS_FORCE_MMS_OVERRIDES := true
-
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_PRODUCT_PACKAGES += \
     AndroidAuto \
     GoogleCamera \
@@ -220,7 +220,21 @@ else
 PRODUCT_PACKAGES += $(filter-out $(GAPPS_EXCLUDED_PACKAGES),$(GAPPS_PRODUCT_PACKAGES))
 endif # end tvmini
 
-
+ifeq ($(GAPPS_FORCE_WEBVIEW_OVERRIDES),true)
+ifneq ($(filter 29,$(call get-allowed-api-levels)),)
+# starting with Q, put the overlay in a product APK
+PRODUCT_PACKAGES += GoogleWebViewOverlay
+else ifneq ($(filter 24,$(call get-allowed-api-levels)),)
+# starting with nougat, use a different overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(GAPPS_DEVICE_FILES_PATH)/overlay/webview/24
+else
+DEVICE_PACKAGE_OVERLAYS += \
+    $(GAPPS_DEVICE_FILES_PATH)/overlay/webview/21
+endif
+PRODUCT_PACKAGES += \
+    WebViewGoogle
+endif
 
 ifeq ($(GAPPS_FORCE_BROWSER_OVERRIDES),true)
 ifneq ($(filter 23,$(call get-allowed-api-levels)),)
