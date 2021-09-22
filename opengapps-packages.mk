@@ -25,6 +25,7 @@ GAPPS_PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     GoogleLoginService \
     SetupWizard \
+    LatinImeGoogle \
     Phonesky
 
 TVGAPPS_PRODUCT_PACKAGES += \
