@@ -25,8 +25,8 @@ GAPPS_PRODUCT_PACKAGES += \
     GoogleServicesFramework \
     GoogleLoginService \
     SetupWizard \
-    LatinImeGoogle \
-    Phonesky
+    Phonesky \
+    GoogleCalendarSyncAdapter
 
 TVGAPPS_PRODUCT_PACKAGES += \
     ConfigUpdater \
@@ -89,6 +89,7 @@ endif
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
 TVGAPPS_PRODUCT_PACKAGES += \
+    GoogleCalendarSyncAdapter \
     GooglePartnerSetup \
     GoogleOneTimeInitializer
 else
@@ -102,6 +103,7 @@ endif
 
 ifneq ($(filter nano,$(TARGET_GAPPS_VARIANT)),) # require at least nano
 GAPPS_PRODUCT_PACKAGES += \
+    libjni_latinimegoogle \
     Velvet
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
@@ -113,6 +115,7 @@ endif
 
 ifneq ($(filter micro,$(TARGET_GAPPS_VARIANT)),) # require at least micro
 GAPPS_PRODUCT_PACKAGES += \
+    CalendarGooglePrebuilt \
     PrebuiltExchange3Google \
     PrebuiltGmail
 
@@ -130,6 +133,7 @@ endif
 
 ifneq ($(filter mini,$(TARGET_GAPPS_VARIANT)),) # require at least mini
 GAPPS_PRODUCT_PACKAGES += \
+    CalculatorGoogle \
     PrebuiltDeskClockGoogle \
     Hangouts \
     Maps \
@@ -161,6 +165,7 @@ GAPPS_PRODUCT_PACKAGES += \
     AndroidAuto \
     GoogleCamera \
     GoogleContacts \
+    LatinImeGoogle \
     StorageManagerGoogle \
     TagGoogle \
     GoogleVrCore
@@ -183,10 +188,14 @@ GAPPS_PRODUCT_PACKAGES += \
     CarrierServices \
     GoogleEarth \
     GCS \
+    GoogleHindiIME \
     GoogleJapaneseInput \
+    KoreanIME \
+    GooglePinyinIME \
     Tycho \
     Street \
-    TranslatePrebuilt
+    TranslatePrebuilt \
+    GoogleZhuyinIME
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
 GAPPS_PRODUCT_PACKAGES += \
