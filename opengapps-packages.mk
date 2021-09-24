@@ -103,7 +103,6 @@ endif
 
 ifneq ($(filter nano,$(TARGET_GAPPS_VARIANT)),) # require at least nano
 GAPPS_PRODUCT_PACKAGES += \
-    libjni_latinimegoogle \
     Velvet
 
 ifneq ($(filter 28,$(call get-allowed-api-levels)),)
@@ -165,7 +164,6 @@ GAPPS_PRODUCT_PACKAGES += \
     AndroidAuto \
     GoogleCamera \
     GoogleContacts \
-    LatinImeGoogle \
     StorageManagerGoogle \
     TagGoogle \
     GoogleVrCore
